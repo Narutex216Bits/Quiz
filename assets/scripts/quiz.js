@@ -6,6 +6,18 @@ let qtdePontos = 0;
 let qtdePulos = 0;
 let qtdeErros = 0;
 
+//Placar
+let spanPulos=document.getElementById('spanPulos')
+
+let btnconfirmar = document.getElementById('btnconfirmar');
+
+
+let btnpular = document.getElementById('btnpular');
+btnpular.addEventListener('click', () => pular());
+
+let btnparar = document.getElementById('btnparar');
+btnparar.addEventListener('click', () => parar());
+
 let pergunta = document.getElementById('pergunta');
 let resp1 = document.getElementById('resp1');
 let resp2 = document.getElementById('resp2');
@@ -25,3 +37,20 @@ function sortear() {
     resp4.innerHTML = perguntas[idxPergunta].RESP4;
 }
     
+function pular() {
+    qtdePulos++;
+
+    if(qtdePulos == 3){
+        btnpular.disabled=true;
+    }
+
+    spanPulos.innerText = `Pulos: ${qtdePulos}`;
+
+    sortear();
+}
+
+function parar() {
+    alert('Que Pena, você desistiu!!!');
+    history.back();
+
+}
