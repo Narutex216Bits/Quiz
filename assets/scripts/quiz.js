@@ -9,8 +9,8 @@ let qtdeErros = 0;
 //Placar
 let spanPulos=document.getElementById('spanPulos')
 
+//botões
 let btnconfirmar = document.getElementById('btnconfirmar');
-
 
 let btnpular = document.getElementById('btnpular');
 btnpular.addEventListener('click', () => pular());
@@ -18,6 +18,7 @@ btnpular.addEventListener('click', () => pular());
 let btnparar = document.getElementById('btnparar');
 btnparar.addEventListener('click', () => parar());
 
+//Perguntas e respostas
 let pergunta = document.getElementById('pergunta');
 let resp1 = document.getElementById('resp1');
 let resp2 = document.getElementById('resp2');
@@ -40,7 +41,7 @@ function sortear() {
 function pular() {
     qtdePulos++;
 
-    if(qtdePulos == 3){
+    if(qtdePulos == 3) {
         btnpular.disabled=true;
     }
 

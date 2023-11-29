@@ -1,29 +1,26 @@
 <html>
     <head>
         <title>Quiz</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
     </head>
     <body>
         <!-- Aqui começa o Quiz -->
         <h1>Quiz - 1H3 B</h1>
         <p>Venha fazer parte dessa turminha do barulho!!!</p>
-        
-        <select>
-            <option value="C">Ciências</option>
-            <option value="G">Geografia</option>
-            <option value="H">História</option>
-            <option value="I">Inglês</option>
-            <option value="M">Matemática</option>
-            <option value="P">Português</option>
-            <option value="V" selected>Variável</option>
-        </select>
-    <!-- Cometários são aqui -->
+        <button onclick="selecionarMateria('C')">Ciências</button>
+        <button onclick="selecionarMateria('G')">Geografia</button>
+        <button onclick="selecionarMateria('H')">História</button>
+        <button onclick="selecionarMateria('I')">Inglês</button>
+        <button onclick="selecionarMateria('M')">Matemática</button>
+        <button onclick="selecionarMateria('P')">Português</button>
+        <button onclick="selecionarMateria('V')">Variado</button>
+   
+            <!-- Cometários são aqui -->
     </body>
-
     <script>
-        function selecionarMateria(materia){
+        function selecionarMateria(materia) {
             alert(materia);
         }
-            
-        
     </script>
 </html>
