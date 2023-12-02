@@ -7,10 +7,14 @@ let qtdePulos = 0;
 let qtdeErros = 0;
 
 //Placar
+let spanNivel=document.getElementById('spanNivel')
+let spanPontos=document.getElementById('spanPontos')
 let spanPulos=document.getElementById('spanPulos')
+let spanErros=document.getElementById('spanErros')
 
 //botões
 let btnconfirmar = document.getElementById('btnconfirmar');
+btnconfirmar.addEventListener('click', () => confirmar());
 
 let btnpular = document.getElementById('btnpular');
 btnpular.addEventListener('click', () => pular());
@@ -55,3 +59,37 @@ function parar() {
     history.back();
 
 }
+
+function confirmar() {
+    let valorResposta = document.querySelector('input[name="resposta"]:checked');
+    console.log(valorResposta);
+
+if(valorResposta == null){
+    alert('Selecione uma resposta antes de confirmar...');
+    return;
+}
+
+    if(valorResposta.value == perguntas[idxPergunta].CERTA){
+        alert('Acertou miseravi!');
+        qtdePontos++;
+        
+    }else{
+        alert('Ahh que burro!! Dá zero pra ele!');
+        qtdeErros++;
+    }
+
+    valorResposta.checked = false;
+
+    sortear()
+    
+    atualizarPlacar()
+
+}
+
+function atualizarPlacar(){
+    spanNivel.innerText = `Nivel: ${nivel}`;
+    spanPontos.innerText = `Pontos: ${qtdePontos}`;
+    spanPulos.innerText = `Pulos: ${qtdePulos}`;
+    spanErros.innerText = `Erros: ${qtdeErros}`;
+}
+
